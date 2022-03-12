@@ -16,71 +16,74 @@
   </head>
   <body>
     <div class="weatherApp">
-    <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <div class="m-5">
-            <form id="search-form">
-              <div class="row g-2">
-                <div class="col-9">
-                  <input
-                    type="search"
-                    id="inputPassword6"
-                    class="form-control"
-                    placeholder="Enter your city"
-                  />
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <div class="m-5">
+              <form id="search-form">
+                <div class="row g-2">
+                  <div class="col-9">
+                    <input
+                      type="search"
+                      id="inputPassword6"
+                      class="form-control"
+                      placeholder="Enter your city"
+                    />
+                  </div>
+                  <div class="col-3">
+                    <button type="submit" class="btn btn-primary" id="search">
+                      Search
+                    </button>
+                  </div>
                 </div>
-                <div class="col-3">
-                  <button type="submit" class="btn btn-primary" id="search">
-                    Search
-                  </button>
-                </div>
-              </div>
-            </form>
-            <div class="row">
-              <div class="col-12">
-                <h1 class="fw-bold pt-4" id="current-city">Stuttgart</h1>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <h5 id="todayTime">Today 12:56</h5>
-              </div>
-            </div>
+              </form>
               <div class="row">
-              <div class="col-12">
-                <h5 id="todayTime">Snow</h5>
+                <div class="col-12">
+                  <h1 class="fw-bold pt-4" id="current-city">Stuttgart</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h5 id="todayTime">Today 12:56</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h5 id="current-weather">Snow</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="clearfix">
+                    <div class="float-left temperature">
+                      <span class="fs-0 pl-6" id="temperature-today">-2</span>
+                      <span class="units px-2">
+                        <a href="#" id="celcius">°C</a>
+                        <span id="seperator">|</span>
+                        <a href="#" id="fahrenheit">°F</a>
+                      </span>
+                      <span id="weather-icon">🌨</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 fs-5">
+                  Humidity: <span id="humidsity">90%</span>
+                  <br />
+                  Wind: <span id="wind">3km/h</span>
+                </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-5">
-               <span class="fs-0 pl-6" id="temperature-today">-2</span>
-                <span class="units px-2">
-                  <a href="#" id="celcius">°C</a>
-                  <span id="seperator">|</span>
-                  <a href="#" id="fahrenheit">°F</a>
-                </span>
-                <icon id="weather-icon">🌨</span>
-                
-              </div>
-              <div class="col-7 fs-5">
-                Humidity: <span id="humidity">90%</span>
-                <br />
-                Wind: <span id="wind">3km/h</span>
-              </div>
           </div>
-            </div>
         </div>
       </div>
+      <div class="container">
+        <a href="https://github.com/Alistoc/Weather-App" target="_blank"
+          >Open-source code</a
+        >
+        by Alice Stockmann
+      </div>
     </div>
-    <div class="container">
-      <a href="https://github.com/Alistoc/Weather-App" target="_blank"
-        >Open-source code</a
-      >
-      by Alice Stockmann
-    </div>
-    </div>
-  
+
     <script src="src/skript.js"></script>
   </body>
 </html>
