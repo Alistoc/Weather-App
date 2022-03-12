@@ -70,34 +70,6 @@ form.addEventListener("submit", searchCity);
 axios.get(weather).then(showWeather);
 //console.log(weather);
 
-//Current Button
-
-function currentSearch(position) {
-  let longitude = position.coords.longitude;
-  let latitude = position.coords.latitude;
-  //let city = position.name;
-  //console.log(position);
-  let apiKey = "61cf3beda9a45cdf16d3405f3d2ca3b5";
-  let weather = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-
-  function showWeather(response) {
-    let temperature = Math.round(response.data.main.temp);
-    console.log(temperature);
-
-    let geoTemp = document.querySelector("#temperature-today");
-    geoTemp.innerHTML = temperature;
-  }
-  axios.get(weather).then(showWeather);
-}
-
-let button = document.querySelector("#current-geo");
-button.addEventListener(
-  "click",
-  navigator.geolocation.getCurrentPosition(currentSearch)
-);
-
-console.log(navigator);
-
 //Covert Temperature
 
 function unitChangeC(event) {
