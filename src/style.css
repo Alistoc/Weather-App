@@ -18,3 +18,8 @@
 #weather-icon {
   font-size: 80px;
 }
+
+.weatherApp {
+  max-width: 1000px;
+  margin: 30px auto;
+}
