@@ -53,6 +53,8 @@ function showWeather(response) {
 
   let windSearch = document.querySelector("#wind");
   windSearch.innerHTML = `${windSpeedRounded} km/h`;
+
+  //Add Variable for weather description
 }
 
 function searchCity(event) {
@@ -90,4 +92,5 @@ function unitChangeF(event) {
 let unitFahrenheit = document.querySelector("#fahrenheit");
 unitFahrenheit.addEventListener("click", unitChangeF);
 
-// display the name of the city and the current temperature of the city
+// Add more logic to this function (real data and conversion)
+// And hide link of unit that is currently displayed (decoration/color)
