@@ -40,11 +40,14 @@ function showWeather(response) {
   let wind = response.data.wind.speed;
   let windSpeed = String(response.data.wind.speed * 3.6);
   let windSpeedRounded = Math.round(String(response.data.wind.speed * 3.6));
+  let description = response.data.weather[0].description;
+  //console.log(response.data.weather[0].description);
   //console.log(humidity);
   //console.log(temperature);
   //console.log(wind);
   //console.log(windSpeed);
   //console.log(windSpeedRounded);
+  //console.log(response.data.weather[0]);
 
   let temperatureSearch = document.querySelector("#temperature-today");
   temperatureSearch.innerHTML = temperature;
@@ -55,7 +58,14 @@ function showWeather(response) {
   let windSearch = document.querySelector("#wind");
   windSearch.innerHTML = `${windSpeedRounded} km/h`;
 
-  //Add Variable for weather description
+  let descriptionWeather = document.querySelector("#current-weather");
+  descriptionWeather.innerHTML = description;
+
+  let iconElement = document.querySelector("#weather-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchCity(event) {
@@ -100,5 +110,3 @@ let unitFahrenheit = document.querySelector("#fahrenheit");
 unitFahrenheit.addEventListener("click", unitChangeF);
 
 let celciusTemperature = null;
-
-// And hide link of unit that is currently displayed (decoration/color)

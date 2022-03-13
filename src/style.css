@@ -13,11 +13,19 @@
 }
 #temperature-today {
   font-size: 64px;
+  line-height: 1;
 }
 
-#weather-icon {
-  font-size: 80px;
+img {
+  width: 84px;
+  height: 84px;
   margin-left: 30px;
+  position: relative;
+  top: -25px;
+}
+
+#current-weather::first-letter {
+  text-transform: capitalize;
 }
 
 .weatherApp {
