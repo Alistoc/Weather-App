@@ -77,6 +77,8 @@ axios.get(weather).then(showWeather);
 
 function unitChangeC(event) {
   event.preventDefault();
+  unit.classList.add("active");
+  unitFahrenheit.classList.remove("active");
   let temperaturChange = document.querySelector("#temperature-today");
   temperaturChange.innerHTML = Math.round(celciusTemperature);
 }
@@ -87,6 +89,8 @@ unit.addEventListener("click", unitChangeC);
 function unitChangeF(event) {
   event.preventDefault();
   let temperaturChange = document.querySelector("#temperature-today");
+  unit.classList.remove("active");
+  unitFahrenheit.classList.add("active");
   let fahrenheitTemperature = Math.round((celciusTemperature * 9) / 5 + 32);
   temperaturChange.innerHTML = fahrenheitTemperature;
   //alert(fahrenheitTemperature);
@@ -97,5 +101,4 @@ unitFahrenheit.addEventListener("click", unitChangeF);
 
 let celciusTemperature = null;
 
-// Add more logic to this function (real data and conversion)
 // And hide link of unit that is currently displayed (decoration/color)
