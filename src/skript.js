@@ -34,7 +34,8 @@ let cityName = document.querySelector("#current-city").innerHTML;
 let weather = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
 
 function showWeather(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
+  let temperature = Math.round(celciusTemperature);
   let humidity = response.data.main.humidity;
   let wind = response.data.wind.speed;
   let windSpeed = String(response.data.wind.speed * 3.6);
@@ -77,7 +78,7 @@ axios.get(weather).then(showWeather);
 function unitChangeC(event) {
   event.preventDefault();
   let temperaturChange = document.querySelector("#temperature-today");
-  temperaturChange.innerHTML = "-5";
+  temperaturChange.innerHTML = Math.round(celciusTemperature);
 }
 
 let unit = document.querySelector("#celcius");
@@ -86,11 +87,15 @@ unit.addEventListener("click", unitChangeC);
 function unitChangeF(event) {
   event.preventDefault();
   let temperaturChange = document.querySelector("#temperature-today");
-  temperaturChange.innerHTML = "20";
+  let fahrenheitTemperature = Math.round((celciusTemperature * 9) / 5 + 32);
+  temperaturChange.innerHTML = fahrenheitTemperature;
+  //alert(fahrenheitTemperature);
 }
 
 let unitFahrenheit = document.querySelector("#fahrenheit");
 unitFahrenheit.addEventListener("click", unitChangeF);
+
+let celciusTemperature = null;
 
 // Add more logic to this function (real data and conversion)
 // And hide link of unit that is currently displayed (decoration/color)
