@@ -110,3 +110,5 @@ let unitFahrenheit = document.querySelector("#fahrenheit");
 unitFahrenheit.addEventListener("click", unitChangeF);
 
 let celciusTemperature = null;
+
+search();

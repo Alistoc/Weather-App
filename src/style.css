@@ -50,3 +50,7 @@ img {
 .active:hover {
   text-decoration: none;
 }
+
+.location {
+  padding-bottom: 10px;
+}
