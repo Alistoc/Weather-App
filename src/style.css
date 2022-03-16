@@ -17,8 +17,8 @@
 }
 
 img {
-  width: 84px;
-  height: 84px;
+  width: 100px;
+  height: 100px;
   margin-left: 15px;
   position: relative;
   top: -25px;
@@ -53,4 +53,15 @@ img {
 
 .location {
   padding-bottom: 10px;
+}
+
+.weather-forcast-icon {
+  font-size: 48px;
+}
+
+.forecast-temperature {
+  font-size: 20px;
+}
+.forecast-day {
+  opacity: 0.3;
 }
