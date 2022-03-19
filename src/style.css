@@ -63,5 +63,11 @@ img {
   font-size: 20px;
 }
 .forecast-day {
-  opacity: 0.3;
+  opacity: 0.4;
+}
+.temperature-min {
+  opacity: 0.4;
+}
+#forecast {
+  text-align: center;
 }
