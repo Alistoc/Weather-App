@@ -33,6 +33,14 @@ let cityName = document.querySelector("#current-city").innerHTML;
 //console.log(cityName);
 let weather = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let coordAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric
+`;
+  axios.get(coordAPI).then(insertForecast);
+}
+
 function showWeather(response) {
   celciusTemperature = response.data.main.temp;
   let temperature = Math.round(celciusTemperature);
@@ -66,6 +74,8 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(event) {
@@ -111,21 +121,24 @@ unitFahrenheit.addEventListener("click", unitChangeF);
 
 let celciusTemperature = null;
 
-function insertForecast() {
+function insertForecast(response) {
+  let forecast = response.data.daily;
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastInsert = `<div class="row">`;
   let day = ["Sun", "Mon", "Thu", "Wed", "Tue", "Fri"];
-  day.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastInsert =
       forecastInsert +
       `
   
   <div class="col-2 forecast-weather">
-    <div class="fs-4 pt-3 forecast-day">${day}</div>
-    <div class="pt-2 weather-forcast-icon">🌨</div>
+    <div class="fs-4 pt-3 forecast-day">${forecastDay.dt}</div>
+    <img class="pt-2 weather-forcast-icon" src=
+    "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"></img>
     <div class="pt-2 forecast-temperature">
-      <span class="temperature-max">3C°</span>
-      <span class="temperature-min">-4C°</span>
+      <span class="temperature-max">${forecastDay.temp.max}C°</span>
+      <span class="temperature-min">${forecastDay.temp.min}C°</span>
     </div>
   </div>`;
   });
@@ -133,5 +146,3 @@ function insertForecast() {
   forecastInsert = forecastInsert + `</div>`;
   forecastElement.innerHTML = forecastInsert;
 }
-
-insertForecast();
