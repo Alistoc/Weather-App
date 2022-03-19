@@ -28,6 +28,10 @@ img {
   text-transform: capitalize;
 }
 
+.forecast-weather {
+  text-align: center;
+}
+
 .weatherApp {
   max-width: 900px;
   margin: 30px auto;
@@ -67,7 +71,4 @@ img {
 }
 .temperature-min {
   opacity: 0.4;
-}
-#forecast {
-  text-align: center;
 }
