@@ -121,7 +121,7 @@ function insertForecast() {
       `
   
   <div class="col-2 forecast-weather">
-    <div class="fs-4 pt-3 forecast-day">Sa</div>
+    <div class="fs-4 pt-3 forecast-day">${day}</div>
     <div class="pt-2 weather-forcast-icon">🌨</div>
     <div class="pt-2 forecast-temperature">
       <span class="temperature-max">3C°</span>
