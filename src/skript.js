@@ -121,21 +121,31 @@ unitFahrenheit.addEventListener("click", unitChangeF);
 
 let celciusTemperature = null;
 
+function formateDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Thu", "Wed", "Tue", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function insertForecast(response) {
   let forecast = response.data.daily;
   console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastInsert = `<div class="row">`;
-  let day = ["Sun", "Mon", "Thu", "Wed", "Tue", "Fri"];
+
   forecast.forEach(function (forecastDay) {
     forecastInsert =
       forecastInsert +
       `
   
   <div class="col-2 forecast-weather">
-    <div class="fs-4 pt-3 forecast-day">${forecastDay.dt}</div>
+    <div class="fs-4 pt-3 forecast-day">${formateDay(forecastDay.dt)}</div>
     <img class="pt-2 weather-forcast-icon" src=
-    "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"></img>
+    "http://openweathermap.org/img/wn/${
+      forecastDay.weather[0].icon
+    }@2x.png"></img>
     <div class="pt-2 forecast-temperature">
       <span class="temperature-max">${forecastDay.temp.max}C°</span>
       <span class="temperature-min">${forecastDay.temp.min}C°</span>
