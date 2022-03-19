@@ -16,7 +16,7 @@
   line-height: 1;
 }
 
-img {
+img.current-img {
   width: 100px;
   height: 100px;
   margin-left: 15px;
@@ -60,11 +60,13 @@ img {
 }
 
 .weather-forcast-icon {
-  font-size: 48px;
+  margin-top: -10px;
+  margin-bottom: -10px;
 }
 
 .forecast-temperature {
   font-size: 20px;
+  float: top;
 }
 .forecast-day {
   opacity: 0.4;

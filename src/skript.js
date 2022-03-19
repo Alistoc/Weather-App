@@ -135,22 +135,24 @@ function insertForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastInsert = `<div class="row">`;
 
-  forecast.forEach(function (forecastDay) {
-    forecastInsert =
-      forecastInsert +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastInsert =
+        forecastInsert +
+        `
   
   <div class="col-2 forecast-weather">
     <div class="fs-4 pt-3 forecast-day">${formateDay(forecastDay.dt)}</div>
-    <img class="pt-2 weather-forcast-icon" src=
+    <img class="weather-forcast-icon" src=
     "http://openweathermap.org/img/wn/${
       forecastDay.weather[0].icon
     }@2x.png"></img>
-    <div class="pt-2 forecast-temperature">
-      <span class="temperature-max">${forecastDay.temp.max}C°</span>
-      <span class="temperature-min">${forecastDay.temp.min}C°</span>
+    <div class="forecast-temperature">
+      <span class="temperature-max">${Math.round(forecastDay.temp.max)}C°</span>
+      <span class="temperature-min">${Math.round(forecastDay.temp.min)}C°</span>
     </div>
   </div>`;
+    }
   });
 
   forecastInsert = forecastInsert + `</div>`;
