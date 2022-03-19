@@ -34,7 +34,7 @@ let cityName = document.querySelector("#current-city").innerHTML;
 let weather = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
 
 function getForecast(coordinates) {
-  console.log(coordinates);
+  //console.log(coordinates);
 
   let coordAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric
 `;
@@ -93,34 +93,6 @@ form.addEventListener("submit", searchCity);
 axios.get(weather).then(showWeather);
 //console.log(weather);
 
-//Covert Temperature
-
-function unitChangeC(event) {
-  event.preventDefault();
-  unit.classList.add("active");
-  unitFahrenheit.classList.remove("active");
-  let temperaturChange = document.querySelector("#temperature-today");
-  temperaturChange.innerHTML = Math.round(celciusTemperature);
-}
-
-let unit = document.querySelector("#celcius");
-unit.addEventListener("click", unitChangeC);
-
-function unitChangeF(event) {
-  event.preventDefault();
-  let temperaturChange = document.querySelector("#temperature-today");
-  unit.classList.remove("active");
-  unitFahrenheit.classList.add("active");
-  let fahrenheitTemperature = Math.round((celciusTemperature * 9) / 5 + 32);
-  temperaturChange.innerHTML = fahrenheitTemperature;
-  //alert(fahrenheitTemperature);
-}
-
-let unitFahrenheit = document.querySelector("#fahrenheit");
-unitFahrenheit.addEventListener("click", unitChangeF);
-
-let celciusTemperature = null;
-
 function formateDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -131,7 +103,7 @@ function formateDay(timestamp) {
 
 function insertForecast(response) {
   let forecast = response.data.daily;
-  console.log(response.data.daily);
+  //console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastInsert = `<div class="row">`;
 

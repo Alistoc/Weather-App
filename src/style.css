@@ -19,7 +19,7 @@
 img.current-img {
   width: 100px;
   height: 100px;
-  margin-left: 15px;
+  margin-left: 5px;
   position: relative;
   top: -25px;
 }
@@ -37,13 +37,10 @@ img.current-img {
   margin: 30px auto;
 }
 
-.temperature {
-  line-height: 1;
-}
-
 .units {
   position: relative;
-  top: -35px;
+  top: -30px;
+  font-size: 25px;
 }
 
 .active {
@@ -61,7 +58,7 @@ img.current-img {
 
 .weather-forcast-icon {
   margin-top: -10px;
-  margin-bottom: -10px;
+  margin-bottom: -5px;
 }
 
 .forecast-temperature {
