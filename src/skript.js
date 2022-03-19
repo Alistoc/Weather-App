@@ -122,7 +122,7 @@ function insertForecast() {
     "Saturday",
   ];
   let forecastElement = document.querySelector("#forecast");
-  let forecastInsert = `<div class="row>`;
+  let forecastInsert = `<div class="row">`;
   forecastInsert =
     forecastInsert +
     `
