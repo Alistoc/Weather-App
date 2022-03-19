@@ -112,20 +112,13 @@ unitFahrenheit.addEventListener("click", unitChangeF);
 let celciusTemperature = null;
 
 function insertForecast() {
-  let day = [
-    "Sunday",
-    "Monday",
-    "Thursday",
-    "Wednesday",
-    "Tuesday",
-    "Friday",
-    "Saturday",
-  ];
   let forecastElement = document.querySelector("#forecast");
   let forecastInsert = `<div class="row">`;
-  forecastInsert =
-    forecastInsert +
-    `
+  let day = ["Sun", "Mon", "Thu", "Wed", "Tue", "Fri"];
+  day.forEach(function (day) {
+    forecastInsert =
+      forecastInsert +
+      `
   
   <div class="col-2 forecast-weather">
     <div class="fs-4 pt-3 forecast-day">Sa</div>
@@ -135,9 +128,9 @@ function insertForecast() {
       <span class="temperature-min">-4C°</span>
     </div>
   </div>`;
+  });
 
   forecastInsert = forecastInsert + `</div>`;
-
   forecastElement.innerHTML = forecastInsert;
 }
 
